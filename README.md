@@ -1,3 +1,3 @@
 # HackerRank
 
-the problem and algorithms I solved in HackerRan
+contests && algorithms I solved in HackerRan
