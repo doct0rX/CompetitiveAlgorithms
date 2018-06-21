@@ -15,6 +15,7 @@ class Player {
         int N = in.nextInt(); // maximum number of turns before game over.
         int X0 = in.nextInt();
         int Y0 = in.nextInt();
+        in.close();
 
         // game loop
         while (true) {
