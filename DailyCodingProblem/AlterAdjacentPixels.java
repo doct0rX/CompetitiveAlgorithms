@@ -32,18 +32,34 @@ import java.util.Arrays;
 
 class AlterAdjacentPixels {
 
-    static String[][] mainImage = {
+    static String[][] mainImage0 = {
         {"B", "B", "W"},
         {"W", "W", "W"},
         {"W", "W", "W"},
         {"B", "B", "B"}
     };
 
-    static String[][] resultImage = {
+    static String[][] resultImage0 = {
         {"B", "B", "G"},
         {"G", "G", "G"},
         {"G", "G", "G"},
         {"B", "B", "B"}
+    };
+
+    static String[][] mainImage = {
+        {"B", "B", "W", "S"},
+        {"W", "W", "W", "W"},
+        {"W", "W", "W", "W"},
+        {"W", "M", "W", "M"},
+        {"B", "B", "B", "B"}
+    };
+
+    static String[][] resultImage = {
+        {"B", "B", "G", "S"},
+        {"G", "G", "G", "G"},
+        {"G", "G", "G", "G"},
+        {"G", "M", "G", "M"},
+        {"B", "B", "B", "B"}
     };
     
     public static void main(String[] args) {
@@ -86,7 +102,7 @@ class AlterAdjacentPixels {
     }
 
     static private void updateCurrentColumn(String[][] currentImage, int column, int row, String oldPixel, String newPixel) {
-        for (int col = column; col < currentImage.length; col++) {
+        for (int col = column + 1; col < currentImage.length; col++) {
             if (currentImage[col][row] == oldPixel) {
                 currentImage[col][row] = newPixel;
             } else {
