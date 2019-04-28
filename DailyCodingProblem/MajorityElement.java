@@ -23,7 +23,7 @@ import java.util.PriorityQueue;
 
 class MajorityElement {
     
-    static Integer[] elementsList = new Integer[] {1, 2, 1, 1, 3, 4, 0};    // New arrays for testing added here
+    static Integer[] elementsList = new Integer[] {1, 2, 1, 1, 3, 4, 0};    // set arrays for testing here
 
     static List<Integer> elements = new ArrayList<Integer>();
     private static Integer firstMajorElement;
@@ -33,7 +33,7 @@ class MajorityElement {
 
     public static void main(String[] args) {
         elements.addAll(Arrays.asList(elementsList));
-        mostCommon(elements);
+        listToMap(elements);
 
         if (Math.floor(firstMajorElementOccurrence / secondMajorElementOccurrence) > 2.0) {
             System.out.println(firstMajorElement);
@@ -43,17 +43,16 @@ class MajorityElement {
 
     }
 
-    public static void mostCommon(List<Integer> list) {
+    public static void listToMap(List<Integer> list) {
         Map<Integer, Integer> map = new HashMap<>();
         for (Integer t : list) {
             Integer val = map.get(t);
             map.put(t, val == null ? 1 : val + 1);
         }
-        firstMajorElement = 0;
-        maxUsingCollectionsMaxAndLambda(map);
+        getMaxCollections(map);
     }
 
-    static void maxUsingCollectionsMaxAndLambda(Map<Integer, Integer> map) {
+    static void getMaxCollections(Map<Integer, Integer> map) {
         Entry<Integer, Integer> maxEntry = Collections.max(map.entrySet(), (Entry<Integer, Integer> e1, Entry<Integer, Integer> e2) -> e1.getValue().compareTo(e2.getValue()));
         firstMajorElement = maxEntry.getKey();
         firstMajorElementOccurrence = maxEntry.getValue();
