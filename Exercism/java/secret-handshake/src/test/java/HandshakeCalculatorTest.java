@@ -10,10 +10,12 @@ import static org.junit.Assert.assertEquals;
 public class HandshakeCalculatorTest {
 
     private HandshakeCalculator handshakeCalculator;
+//    private HandshakeCalculatorBitwiseOp handshakeCalculator;
 
     @Before
     public void setUp() {
         handshakeCalculator = new HandshakeCalculator();
+//        handshakeCalculator = new HandshakeCalculatorBitwiseOp();
     }
 
     @Test
