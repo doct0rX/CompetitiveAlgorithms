@@ -9,7 +9,7 @@ class RotationalCipher {
      String rotate(String data) {
         StringBuilder res = new StringBuilder();
         for (char chr: data.toCharArray()) {
-            if (String.valueOf(chr).matches("[a-zA-Z]")) {
+            if (Character.isLetter(chr)) {
                 if (Character.isUpperCase(chr)) {
                     int originalAlphabetPosition = chr - 'A';
                     int newAlphabetPosition = (originalAlphabetPosition + shiftKey) % 26;
