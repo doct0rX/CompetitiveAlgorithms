@@ -14,8 +14,8 @@ https://codeforces.com/contest/1460/problem/A
 
 
 ### The most optimized solutions for this problem could be found here:
-1. [hermenier et al. - entropy: a Consolidation manager for clusters](https://hal.archives-ouvertes.fr/hal-01102354/document)
-2. [bari et. al. - CQNCR: optimal VM migration planning in cloud data centers](https://www.researchgate.net/publication/269294303_CQNCR_Optimal_VM_migration_planning_in_cloud_data_centers/link/580582e108aee314f68e2591/download)
+1. [hermenier et al. - entropy: a Consolidation manager for clusters](https://hal.archives-ouvertes.fr/hal-01102354/document) 2011
+2. [bari et. al. - CQNCR: optimal VM migration planning in cloud data centers](https://www.researchgate.net/publication/269294303_CQNCR_Optimal_VM_migration_planning_in_cloud_data_centers/link/580582e108aee314f68e2591/download) 2014 *(I read this paper)*
 
 
 /** 𝑆𝑐𝑜𝑟𝑒=1000⋅log10(𝑇𝑜𝑡𝑎𝑙_𝑠𝑡𝑒𝑝𝑠×𝑀𝑒𝑚𝑜𝑟𝑦_𝑚𝑜𝑣𝑒𝑑_𝑖𝑛_𝐺𝐵+1) */ 
