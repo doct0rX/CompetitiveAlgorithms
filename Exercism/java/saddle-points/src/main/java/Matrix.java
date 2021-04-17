@@ -4,17 +4,15 @@ import java.util.Set;
 
 class Matrix {
 
-    List<List<Integer>> pValues;
+    List<List<Integer>> values;
 
-    Matrix(List<List<Integer>> values) {
-        pValues = values;
-    }
+    Matrix(List<List<Integer>> values) { this.values = values; }
 
     Set<MatrixCoordinate> getSaddlePoints() {
         HashSet<MatrixCoordinate> res = new HashSet<MatrixCoordinate>();
-        for (int i = 0; i < pValues.size(); i++) {
-            for (int j = 0; j < pValues.get(i).size(); j++) {
-                int currentPosValue = pValues.get(i).get(j);
+        for (int i = 0; i < values.size(); i++) {
+            for (int j = 0; j < values.get(i).size(); j++) {
+                int currentPosValue = values.get(i).get(j);
                 if (checkRows(currentPosValue, i, j) && checkCols(currentPosValue, i, j)) {
                     res.add(new MatrixCoordinate(i + 1, j + 1));
                 }
@@ -23,20 +21,19 @@ class Matrix {
         return res;
     }
 
-
     boolean checkRows(int rowVal, int xCoordination, int yCoordination) {
-        if (pValues.get(xCoordination).size() > 0) {
-            for (int i = 0; i < pValues.get(xCoordination).size(); i++) {
-                if (rowVal < pValues.get(xCoordination).get(i)) { return false; }
+        if (values.get(xCoordination).size() > 0) {
+            for (int i = 0; i < values.get(xCoordination).size(); i++) {
+                if (rowVal < values.get(xCoordination).get(i)) { return false; }
             }
         }
         return true;
     }
 
     boolean checkCols(int colVal, int xCoordination, int yCoordination) {
-        if (pValues.size() > 0) {
-            for (int i = 0; i < pValues.size(); i++) {
-                if (colVal > pValues.get(i).get(yCoordination)) { return false; }
+        if (values.size() > 0) {
+            for (List<Integer> pValue : values) {
+                if (colVal > pValue.get(yCoordination)) { return false; }
             }
         }
         return true;
