@@ -1,10 +1,22 @@
-/*
+import java.util.*;
 
-Since this exercise has a difficulty of > 4 it doesn't come
-with any starter implementation.
-This is so that you get to practice creating classes and methods
-which is an important part of programming in Java.
 
-Please remove this comment when submitting your solution.
+class Flattener {
 
-*/
+    public Flattener() { }
+
+    public static List<?> flatten(List<?> nestedObjectsList) {
+        List<Object> res = new ArrayList<Object>();
+        if (nestedObjectsList.isEmpty()) { return res; }
+        for (Object obj: nestedObjectsList) {
+            if (obj instanceof String || obj instanceof Integer || obj instanceof Character) {
+                res.add(obj);
+            } else if (obj == null) {
+//                 do nothing
+            } else {
+                res.addAll(flatten((List<?>) obj));
+            }
+        }
+        return res;
+    }
+}
