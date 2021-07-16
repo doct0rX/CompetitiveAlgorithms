@@ -20,9 +20,9 @@ class  MinimumDominoRotationsForEqualRow {
     }
 
     public static int minDominoRotations(int[] tops, int[] bottoms) {
-        int minRotations = Math.min(numSwaps(commonElement(tops), tops, bottoms) , numSwaps(commonElement(bottoms), tops, bottoms));
-        minRotations = Math.min(minRotations, numSwaps(commonElement(bottoms), bottoms, tops));
-        minRotations = Math.min(minRotations, numSwaps(commonElement(tops), bottoms, tops));
+        int minRotations = Math.min(numSwaps(tops[0], tops, bottoms) , numSwaps(bottoms[0], tops, bottoms));
+        minRotations = Math.min(minRotations, numSwaps(bottoms[0], bottoms, tops));
+        minRotations = Math.min(minRotations, numSwaps(tops[0], bottoms, tops));
         return minRotations == Integer.MAX_VALUE? -1: minRotations;
     }
 
@@ -38,20 +38,20 @@ class  MinimumDominoRotationsForEqualRow {
         return rotations;
     }
 
-    static int commonElement(int[] arr) {
-        Map<Integer, Integer> map = new HashMap<Integer, Integer>();
-        for (int a: arr) {
-            Integer freq = map.get(a);
-            map.put(a, freq == null? 1: freq + 1);
-        }
-        int max = -1;
-        int mostFreq = -1;
-        for (Map.Entry<Integer, Integer> e : map.entrySet()) {
-            if (e.getValue() > max) {
-                mostFreq = e.getKey();
-                max = e.getValue();
-            }
-        }
-        return mostFreq;
-    }
+    // static int commonElement(int[] arr) {
+    //     Map<Integer, Integer> map = new HashMap<Integer, Integer>();
+    //     for (int a: arr) {
+    //         Integer freq = map.get(a);
+    //         map.put(a, freq == null? 1: freq + 1);
+    //     }
+    //     int max = -1;
+    //     int mostFreq = -1;
+    //     for (Map.Entry<Integer, Integer> e : map.entrySet()) {
+    //         if (e.getValue() > max) {
+    //             mostFreq = e.getKey();
+    //             max = e.getValue();
+    //         }
+    //     }
+    //     return mostFreq;
+    // }
 }
