@@ -1,5 +1,5 @@
 # CompetitiveAlgorithms 🐔
-All my competitive algorithms and problems solving for **some Contests and some Job interviews**.
+All my competitive algorithms and problem-solving for **some Contests and some Job interviews**.
 
 
 ENJOY 🎉
@@ -10,6 +10,8 @@ ENJOY 🎉
 ```
 
 ------------------------
+
+My LeetCode account: **[doct0rX](https://leetcode.com/doct0rX)**
 
 ## LEETCODE PATTERNS
 
